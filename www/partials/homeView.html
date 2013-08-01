@@ -1,0 +1,41 @@
+<div class="navbar" ng-controller="HomeCtrl">
+    <div class="container">
+
+        <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">Climbing Coach</a>
+
+        <!-- Place everything within .navbar-collapse to hide it until above 768px -->
+        <div class="nav-collapse collapse navbar-responsive-collapse">
+
+            <ul class="nav navbar-nav">
+                <li><a href="#" ng-click="slidePage('/viewGoals')">Goals</a></li>
+                <li><a href="#" ng-click="slidePage('/viewTraining')">Training</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="topcoat-list__container list">
+    <h3 class="topcoat-list__header">Actions</h3>
+    <ul class="topcoat-list">
+        <li class="topcoat-list__item--first" ng-click="slidePage('/viewTraining')">
+            Training
+        </li>
+        <li class="topcoat-list__item" ng-click="slidePage('/viewGoals')">
+            Goals
+        </li>
+    </ul>
+    <div class="topcoat-navigation-bar">
+        <h1 class="centerize"  ng-show="!showURL" ng-swipe-left="showURL=true">Version  {{' %VERSION%' | interpolate}} </h1>
+        <h1 class="centerize" ng-show="showURL" ng-swipe-right="showURL=false"><a href="http://devgirl.org">devgirl.org </a></h1>
+    </div>
+</div>
+<ng-include src="'partials/settingsOverlay.html'"></ng-include>

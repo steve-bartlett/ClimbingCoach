@@ -1,0 +1,45 @@
+<div class="navbar" ng-controller="HomeCtrl">
+    <div class="container">
+
+        <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#" ng-click="slidePage('/','modal')">Climbing Coach</a>
+
+        <!-- Place everything within .navbar-collapse to hide it until above 768px -->
+        <div class="nav-collapse collapse navbar-responsive-collapse">
+
+            <ul class="nav navbar-nav">
+                <li><a href="#" ng-click="slidePage('/viewGoals')">Goals</a></li>
+                <li class="active"><a href="#">Training</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<h3>Recent</h3>
+<div ng-controller="TrainingListCtrl">
+
+    <div class="list-group">
+        <a href="#" class="list-group-item " ng-repeat="latest in recent">
+            {{latest.when}} {{latest.name}}
+            {{latest.level}} {{latest.duration}} hour(s)
+        </a>
+
+    </div>
+
+        <h4 class="topcoat-list__header">Action</h4>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default">Show Trends</button>
+        <button type="button" class="btn btn-default">Search</button>
+        <button type="button" class="btn btn-default" ng-click="slidePage('/viewAddTraining')" >Add Training</button>
+    </div>
+
+</div>
+
